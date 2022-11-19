@@ -1,21 +1,21 @@
-import {Button,TextField,RadioGroup,FormLabel,FormControl,FormControlLabel,Radio,Select,Autocomplete,MenuItem,InputLabel} from '@mui/material';
+import {Button,TextField,RadioGroup,FormLabel,FormControl,FormControlLabel,Radio,Autocomplete} from '@mui/material';
 // import { ReactElement, JSXElementConstructor, ReactFragment, ReactPortal } from 'react';
-export const Uibutton=(props:any)=>{
+export const Uibutton=(props)=>{
     return(
-        <Button variant='contained'>{props.name}</Button>
+        <Button type='submit' variant='contained'>{props.name}</Button>
     )
 }
-export const Textbox=(props: any)=>{
+export const Textbox=(props)=>{
     return(
-        <TextField sx={{ width: 300 }} variant="standard" label={props.name} required></TextField>
+        <TextField  sx={{ width: 300 }} variant="outlined" label={props.name} required></TextField>
     )
 }
-export const Numbox=(props:any)=>{
+export const Numbox=(props)=>{
     return(
-        <TextField required inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} label={props.name}/>
+        <TextField  required inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }} label={props.name}/>
     )
 }
-export const Bradio=(props: any)=>{
+export const Bradio=(props)=>{
     return(
     <FormControl>
         <FormLabel required id="demo--group-label">{props.name}</FormLabel>
@@ -27,43 +27,44 @@ export const Bradio=(props: any)=>{
         
     </FormControl>)
 }
-export const Dropdown=(props: any)=>{
+export const Dropdown=(props)=>{
     return(
         <Autocomplete
   disablePortal
   id="combo-box-demo"
-  options={props.val}
+  options={CasteList}
   sx={{ width: 300 }}
   renderInput={(params) => <TextField {...params} label={props.name} />}
 />
     )
 }
+
 const MaritalStatus = [
     { label: 'Married'},
     { label: 'Unmarried'},
     { label: 'Divorced'}
-]
-const CasteList = [
+  ]
+  const CasteList = [
     { label: 'General'},
     { label: 'Other Backward Class (OBC)'},
     { label: 'Particularly Vulnerable Tribal Group (PVTG)'},
     { label: 'Scheduled Caste (SC)'},
     { label: 'Scheduled Tribe (ST)'}]
-const Religion=[
+  const Religion=[
     { label: 'Chiristian'},
     { label: 'Hindu'},
     { label: 'Muslim'},
     { label: 'Sikh'},
     { label: 'Jain'}
-]
-const empStatus=[
+  ]
+  const empStatus=[
     { label: 'Employed'},
     { label: 'Unemployed'},
-]
-const EduQual=[
+  ]
+  const EduQual=[
     { label : 'Primary'},
     { label : 'Higher-Secondary'},
     { label : 'UnderGraduate'},
     { label : 'PostGraduate'},
     { label : 'Doctorate'}
-]
+  ]
